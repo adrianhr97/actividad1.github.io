@@ -75,7 +75,7 @@
     }
 
     function save_user (User $user){
-        $conn = $GLOBALS['connn87'];
+        $conn = $GLOBALS['connn'];
         $sql = "INSERT INTO user (username, password, name, surnames, email)
         VALUES ('".$user->getUsername()."', '".$user->getPassword()."', '".$user->getName()."', '".$user->getSurnames()."', '".$user->getEmail()."')";
         return $conn->query($sql) ;
