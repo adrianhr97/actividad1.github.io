@@ -60,16 +60,25 @@
     }
 
     function update_user (User $user){
-        // COMPLETAR UPDATE DE USUARIO
+        $conn = $GLOBALS['conn'];
+        $sql = "UPDATE user SET username='".$user->getUsername()."', name='".$user->getName()."', surnames='".$user->getSurnames()."', email='".$user->getEmail()."' WHERE id=".$user->getId();
+        return $conn->query($sql) ;
 
     }
 
     function delete_user ($user_id){
-        // COMPLETAR ELIMINAR DE USUARIO
+        $conn = $GLOBALS['conn'];
+        $sql = "DELETE FROM user WHERE id='".$user_id."'";
+        return $conn->query($sql) ;
+      
 
     }
 
     function save_user (User $user){
-        // COMPLETAR PARA GUARDAR EL USUARIO
+        $conn = $GLOBALS['connn87'];
+        $sql = "INSERT INTO user (username, password, name, surnames, email)
+        VALUES ('".$user->getUsername()."', '".$user->getPassword()."', '".$user->getName()."', '".$user->getSurnames()."', '".$user->getEmail()."')";
+        return $conn->query($sql) ;
 
     }
+
